@@ -23,8 +23,16 @@ else:
 4.  (необов'язкове виконання) Створити програму, яка буде очікувати введення тексту від користувача 
     і повідомляти якого типу введені дані. Використати match, case і вбудовані функції Python
 """
-user_input = input(">>>")
+user_input = "qwe"
+# user_input = 123
+# user_input = [1,2,3]
 
 match user_input:
+    case int():
+        print(int)
+    case str():
+        print(str)
+    case list():
+        print(list)
     case _:
         print(type(user_input))
