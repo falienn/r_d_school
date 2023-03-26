@@ -18,12 +18,13 @@ def add(phone_book, name, number):
     if name not in phone_book:
         phone_book[name] = number
     else:
-        print("Такий запис вже існує")
+        return "Такий запис вже існує"
 
 
 def delete(phone_book, name):
     if name in phone_book:
         del phone_book[name]
+        return f"Запис {name} видалено"
 
 
 def list_(phone_book):
@@ -37,12 +38,40 @@ def show(phone_book, name):
     return phone_book[name]
 
 
-add(phone_book_1, "Vitalii", 123123123)
-add(phone_book_1, "Vitalii", 123123123)
-add(phone_book_1, "Vitya", 123123123)
-print(phone_book_1)
-print(stats(phone_book_1))
-print(list_(phone_book_1))
-delete(phone_book_1, "Vitya")
-print(list_(phone_book_1))
-print(show(phone_book_1, "Vitalii"))
+operation = {"1": stats,
+             "2": add,
+             "3": delete,
+             "4": list_,
+             "5": show}
+
+while True:
+    print("""
+Оберіть операцію:
+1: кількість записів
+2: додати запис
+3: видалити запис за іменем
+4: список всіх імен в книзі
+5: детальна інформація по імені
+6: Вихід з программи
+    """)
+    try:
+        choice = input(">>>")
+        match choice:
+            case "1":
+                print(operation[choice](phone_book_1))
+            case "2":
+                name = input("Введіть ім'я абонента ->")
+                number = input("Введіть номер абонента ->")
+                operation[choice](phone_book_1, name, number)
+            case "3":
+                name = input("Введіть ім'я абонента ->")
+                print(operation[choice](phone_book_1, name))
+            case "4":
+                print(operation[choice](phone_book_1))
+            case "5":
+                name = input("Введіть ім'я абонента ->")
+                print(operation[choice](phone_book_1, name))
+            case "6":
+                break
+    except Exception as ex:
+        print(ex, type(ex))
