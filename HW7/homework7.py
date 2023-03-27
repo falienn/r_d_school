@@ -54,24 +54,23 @@ while True:
 5: детальна інформація по імені
 6: Вихід з программи
     """)
-    try:
-        choice = input(">>>")
-        match choice:
-            case "1":
-                print(operation[choice](phone_book_1))
-            case "2":
-                name = input("Введіть ім'я абонента ->")
-                number = input("Введіть номер абонента ->")
-                operation[choice](phone_book_1, name, number)
-            case "3":
-                name = input("Введіть ім'я абонента ->")
-                print(operation[choice](phone_book_1, name))
-            case "4":
-                print(operation[choice](phone_book_1))
-            case "5":
-                name = input("Введіть ім'я абонента ->")
-                print(operation[choice](phone_book_1, name))
-            case "6":
-                break
-    except Exception as ex:
-        print(ex, type(ex))
+    choice = input(">>>")
+    match choice:
+        case "1":
+            print(operation[choice](phone_book_1))
+        case "2":
+            name = input("Введіть ім'я абонента ->")
+            number = input("Введіть номер абонента ->")
+            operation[choice](phone_book_1, name, number)
+        case "3":
+            name = input("Введіть ім'я абонента ->")
+            print(operation[choice](phone_book_1, name))
+        case "4":
+            print(operation[choice](phone_book_1))
+        case "5":
+            name = input("Введіть ім'я абонента ->")
+            print(operation[choice](phone_book_1, name))
+        case "6":
+            break
+        case _:
+            print("Повторіть вибір правильно")
