@@ -43,35 +43,35 @@ class MyManager():
 
     def __exit__(self, exc_type, exc_val, exc_tb):
         print("=" * 10)
-
-
-with MyManager():
-    print("Hello World")
-
-with MyManager():
-    my_func()
-
-with MyManager():
-    add(3, 4)
-
+        return True
 
 # with MyManager():
-#     raise ZeroDivisionError
+#     print("Hello World")
+#
+# with MyManager():
+#     my_func()
+#
+# with MyManager():
+#     add(3, 4)
+
+
+with MyManager():
+    raise ZeroDivisionError
 
 #   3.  (необов'язкове виконання) Переписати декоратор із першого завдання,
 #       щоб він приймав цілочисельний аргумент `times`.
 #       Стільки разів виконувавати друк назви функції і часу, скільки ‘times’ задано.
 
-def my_decorator_1(func):
-    times = 5
+def my_decorator_1(times):
+    def real_decor(func):
+        def wraper(*args, **kwargs):
+            print((f" {func.__name__} - {t.tm_hour}:{t.tm_min}:{t.tm_sec}") * times)
+            return func(*args, **kwargs)
 
-    def wraper(*args, **kwargs):
-        print((f" {func.__name__} - {t.tm_hour}:{t.tm_min}:{t.tm_sec}") * times)
-        func(*args, **kwargs)
+        return wraper
+    return real_decor
 
-    return wraper
-
-@my_decorator_1
+@my_decorator_1(times=5)
 def hello_world():
     print("Hello World")
 
