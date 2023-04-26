@@ -1,0 +1,7 @@
+
+INFO:root:[2:44:40] load_phonebook
+INFO:root:[2:44:40] add_contact
+INFO:root:[2:44:40] delete_contact
+INFO:root:[2:44:40] stats_contact
+INFO:root:[2:44:40] list_contact
+INFO:root:[2:49:35] load_phonebook
