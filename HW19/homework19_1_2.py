@@ -34,6 +34,7 @@ class TelegramBot(Bot):
         self.chat_id = chat_id
 
 
+
 if __name__ == "__main__":
     bot1 = Bot('Vania')
     bot1.send_message('Hello!')

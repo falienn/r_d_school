@@ -31,6 +31,7 @@ if __name__ == "__main__":
     bot1.send_message("Hello")
     bot1.say_name()
 
+
     tg_bot = TelegramBot("TG")
     tg_bot.say_name()
     tg_bot.send_message("Hello")

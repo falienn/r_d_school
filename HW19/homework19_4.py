@@ -9,6 +9,7 @@
 # print(first_user == second_user)
 # >>> True
 
+
 class User:
     def __init__(self, name):
         self.name = name
