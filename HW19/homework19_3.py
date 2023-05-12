@@ -13,4 +13,3 @@ class MyStr(str):
 
 my_str = MyStr('test')
 print(my_str)
-
