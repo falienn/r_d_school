@@ -1,0 +1,13 @@
+CREATE TABLE users
+(
+    id         INTEGER PRIMARI KEY AUTOINCREMENT,
+    first_name TEXT,
+    last_name  TEXT,
+    age        INTEGER DEFAULT 18 NOT NULL
+);
+
+INSERT INTO users (first_name, last_name, age) VALUES ('Vitalii', 'Hryhorovych', 27)
+INSERT INTO users (first_name, last_name, age) VALUES ('Vasia', 'Pupkin', 20)
+INSERT INTO users (first_name, last_name) VALUES ('Olga', 'Maksimova')
+INSERT INTO users (first_name, last_name, age) VALUES ('Nikita', 'Petrov', 21)
+INSERT INTO users (first_name, last_name, age) VALUES ('Julia', 'Petrova', 30)
