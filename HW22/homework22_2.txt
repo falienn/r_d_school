@@ -1,0 +1,3 @@
+2. Написати sql запит, який виведе кількість записів в табліці users, що старше 30 років.
+
+SELECT age , COUNT(id) AS users FROM users WHERE age > 30;

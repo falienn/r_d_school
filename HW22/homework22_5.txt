@@ -1,0 +1,8 @@
+5. (необов'язкове виконання) Модифікувати попередній запит таким чином,
+щоб з отриманого результату вибрати тільки ті записи, де значення users більше 1.
+Результатом має бути таблиця:
+    age  | users
+    52   | 2
+    120  | 2
+
+SELECT age, COUNT(id) AS users FROM users WHERE age > 30 GROUP BY age ORDER BY users DESC, age LIMIT 2;
