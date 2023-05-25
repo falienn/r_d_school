@@ -1,10 +1,5 @@
-CREATE TABLE users
-(
-    id         INTEGER PRIMARI KEY AUTOINCREMENT,
-    first_name TEXT,
-    last_name  TEXT,
-    age        INTEGER DEFAULT 18 NOT NULL
-);
+2. Створити SQL запити для додавання записів у створену таблицю.
+Створити запити для додавання мінімум 5 різних записів.
 
 INSERT INTO users (first_name, last_name, age) VALUES ('Vitalii', 'Hryhorovych', 27)
 INSERT INTO users (first_name, last_name, age) VALUES ('Vasia', 'Pupkin', 20)
