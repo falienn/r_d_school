@@ -1,0 +1,42 @@
+# 4. (необов'язкове виконання) Написати наступні запити:
+
+# запит, який для кожного user порахує суму всіх покупок.
+# Результат має бути представлений у форматі:
+# users.id, users.first_name, users.last_name, total_purchases
+
+SELECT users.id, users.first_name, users.last_name, SUM(books.price) AS total_purchases
+FROM users
+JOIN purchase ON users.id = purchase.user_id
+JOIN books ON purchase.book_id = books.id
+GROUP BY users.id, users.first_name, users.last_name;
+
+# запит, який виведе кількість покупок книжок для кожного user.
+# Результат має бути представлений у форматі: user.id, purchases_count
+
+SELECT purchase.user_id AS user_id, COUNT(purchase.id) AS purchases_count
+FROM purchase
+GROUP BY purchase.user_id;
+
+# запит, який виведе кількість покупок книжок для автора Rowling.
+# Результат має бути представлений у форматі: amount
+
+SELECT COUNT(purchase.id) AS amount
+FROM purchase
+JOIN books ON purchase.book_id = books.id
+WHERE books.author = 'Rowling';
+
+# запит, який виведе загальні суми продажів для кожного автора та кількість покупок.
+
+SELECT books.author, SUM(books.price) AS total_sales, COUNT(purchase.id) AS purchases_count
+FROM books
+JOIN purchase ON books.id = purchase.book_id
+GROUP BY books.author;
+
+# запит, який виведе всі назви книжок із кількістю їх продажів
+# в порядку спадання кількості продажів.
+
+SELECT books.title, COUNT(purchase.id) AS sales_count
+FROM books
+JOIN purchase ON books.id = purchase.book_id
+GROUP BY books.title
+ORDER BY sales_count DESC;
