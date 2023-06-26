@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Vitalii Hryhorovych</title>
+</head>
+<body>
+    <header>
+    <img src="images/avatar.jpg" alt="photo">
+    <h1>Григорович Віталій Олександрович</h1>
+    <div class="bottons">
+    <ul id="navigation">
+        <li class="navigation"><a href="#">Про мене</a></li>
+        <li class="navigation"><a href="#">Домашні завдання</a></li>
+        <li class="navigation"><a href="#">Досвід роботи</a></li>
+    </ul>
+    <button id="addFriendButton" class="botton">Додати в друзі</button>
+    <button id="sendMessageButton" class="botton">Написати повідомлення</button>
+    <button id="offerJobButton" class="botton">Запропонувати роботу</button>
+    <div id="friendCount">Кількість друзів: <span id="count">0</span></div>
+    </div>
+    </header>
+    <div>
+    <article>
+        <h2>Про мене:</h2>
+        <p>
+            Досвід роботи 7 років в компанії ТОВ "Нова Пошта",
+            сфера - логістика.
+            Займав керівну посаду старшого фахівця приймальника,
+            помічник керівника відділення. Зараз вивчаю Python.
+        </p>
+    </article>
+        <hr>
+    <article>
+        <h2>Домашні завдання:</h2>
+        <table class="my-table">
+            <thead>
+                <tr>
+                    <th>Домашнє завдання</th>
+                    <th>Оцінка</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>№3 «Базові типи даних та операції. Part 1»</td>
+                    <td>5 / 5</td>
+                </tr>
+                <tr>
+                    <td>№4 «Базові типи даних та операції. Part 2»</td>
+                    <td>5 / 5</td>
+                </tr>
+                <tr>
+                    <td>№5 «Цикли»</td>
+                    <td>5 / 5</td>
+                </tr>
+                <tr>
+                    <td>№6 «Функції»</td>
+                    <td>8 / 8</td>
+                </tr>
+                <tr>
+                    <td>№7 «Колекції та структури даних. Part 1»</td>
+                    <td>5 / 5</td>
+                </tr>
+                <tr>
+                    <td>№8 «Колекції та структури даних. Part 2»</td>
+                    <td>7 / 7</td>
+                </tr>
+                <tr>
+                    <td>№10 «Рекурсія»</td>
+                    <td>7 / 7</td>
+                </tr>
+                <tr>
+                    <td>№11 «Помилки та винятки»</td>
+                    <td>6 / 6</td>
+                </tr>
+                <tr>
+                    <td>№12 «Декоратори і менеджери контексту»</td>
+                    <td>7 / 7</td>
+                </tr>
+                <tr>
+                    <td>№13 «Файли»</td>
+                    <td>5 / 5</td>
+                </tr>
+                <tr>
+                    <td>№15 «Регулярні вирази (RegEx) в Python»</td>
+                    <td>6 / 7</td>
+                </tr>
+                <tr>
+                    <td>№16 «Багатопотокове програмування»</td>
+                    <td>5 / 5</td>
+                </tr>
+                <tr>
+                    <td>№19 «ООП на прикладах в Python: класи і робота з ними»</td>
+                    <td>8 / 8</td>
+                </tr>
+                <tr>
+                    <td>№21 «Створення бази даних»</td>
+                    <td>6 / 7</td>
+                </tr>
+                <tr>
+                    <td>№22 «Робота з базами даних. Part 1»</td>
+                    <td>6 / 6</td>
+                </tr>
+                <tr>
+                    <td>№23 «Робота з базами даних. Part 2»</td>
+                    <td>6 / 6</td>
+                </tr>
+            </tbody>
+        </table>
+    </article>
+        <hr>
+    <article>
+        <h2>Досвід роботи:</h2>
+        <p>Працював з 2014 по 2022 рік на ТОВ "Нова Пошта"</p>
+        <p>Основні обов'язки:</p>
+        <ul>
+            <li>Контроль якості приймання вантажу</li>
+            <li>Контроль якості пакування вантажу</li>
+            <li>Контроль якості угруповування вантажу</li>
+            <li>Контроль якості завантаження авто</li>
+            <li>Контроль якості вивантаження авто</li>
+            <li>Перевірка звітів якості</li>
+            <li>1C</li>
+        </ul>
+    </article>
+    </div>
+<script>
+    let addFriendButton = document.getElementById("addFriendButton");
+    let friendCountSpan = document.getElementById("count");
+    let friendCount = Math.floor(Math.random() * 50);
+    friendCountSpan.textContent = friendCount;
+
+    function addFriend() {
+      friendCount++;
+      friendCountSpan.textContent = friendCount;
+      addFriendButton.textContent = "Очікується підтвердження";
+      addFriendButton.disabled = true;
+    }
+
+    addFriendButton.addEventListener("click", addFriend);
+  </script>
+</body>
+</html>
